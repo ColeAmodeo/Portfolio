@@ -1,0 +1,305 @@
+
+
+
+
+nav {
+    height: 60px;
+    background-color: #E4E2D4;
+    opacity: 0.75;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+}
+a {
+    text-decoration: none;
+}
+.navigation {
+    width: 80%;
+    margin: auto;
+    max-width: 960px;
+    min-width: 450px;
+    
+}
+
+a.nav-link {
+    padding: 20px;
+    float: right;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    font-size: 130%;
+    text-align: center;
+    color: #2B8895;
+    transition: background-color 0.5s ease;
+}
+
+a.nav-link:hover {
+    background-color: #202723
+}
+.hidden-nav {
+    display: none;
+}
+.name {
+    height: 31px;
+    float:left;
+    padding: 14.5px 10px;
+    text-align:center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    color: #E4E2D4;
+    background-color: #2B8895;
+    text-indent: 0;
+
+}
+body { 
+    background-image: url("../images/congruent_outline.png"); 
+    background-repeat: repeat;
+    background-position: center;
+}
+
+h1 {
+    color: #E4E2D4;
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    position: relative;
+    padding: 25px 0;
+    background-color: #2B8895;
+}
+
+.page {
+    background-color: #E4E2D4;
+    opacity: 0.70;
+    background-position: center;
+    vertical-align: middle;
+    display:table;
+    margin:auto;
+    width: 80%;
+    margin-top: 65px;
+    max-width: 960px;
+    
+}
+
+#portrait {
+    width: 35%;
+    float: left;
+    margin:25px 0 25px 5%;
+    min-width: 150px;
+    max-width: 250px;
+
+}
+
+#p1 {
+    display: inline-block;
+    width: 50%;
+    min-width: 50px;
+    margin: 25px 5% 25px 5%;
+    text-align: justify;
+
+}
+
+
+
+#bottom-text {
+    padding:0 5% 25px 5%;
+    text-align: justify;
+}
+
+
+p {
+    font-size: 18px;
+    clear: both;
+    line-height: 1.5;
+    text-indent: 30px;
+}
+
+hr {
+
+    background-color: #444;
+    color: black;
+    height: 5px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%; 
+    height:35px;
+    background-color: #E4E2D4;
+    opacity: 0.6;
+}
+h2 {
+    padding-top:5px;
+    color: #2B8895;
+    font-size:20px;
+    text-align: center;
+}
+
+
+/* GRID STYLING */
+
+grid {
+    margin: 22px auto 22px auto;
+    display:grid;
+    width: 95%;
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    grid-template-rows: repeat(3, 250px);
+    grid-gap: 20px;
+
+
+ }
+
+
+.project {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 3%;    
+        border: black 2px solid;
+}
+h3 {
+    position: relative;
+    top: 25%;
+    background-color: black;
+    color: #2B8895;
+    text-align: center;
+    font-size: 25px;
+    padding: 8px 0;
+    border: black 1px solid; 
+    transition: background-color 0.5s ease;
+}
+h3:hover {
+    background-color: #2B8895;
+    color: #E4E2D4;
+    cursor: pointer;
+    
+}
+.A {
+    background-image: url('../images/hangman.png');
+}
+.B {
+    background-image: url('../images/rpg.png');
+}
+.C {
+    background-image: url('../images/rock-paper-scissors.png');
+}
+.D {
+    background-image: url('../images/trivia.png');
+}
+.E {
+    background-image: url('../images/the-terminator.png')
+}
+.F { 
+    background-image: url('../images/nuke.png')
+}
+/* FORM STYLING */
+
+input{
+    display: block;
+    width: 85%;
+    padding: 12px 15px;
+    margin: 40px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+label {
+    font-size: 24px;
+    margin: 10px 0 0 20px;
+    position: relative;
+    top: 30px;
+    left: 21px;
+    color: #2B8895;
+}
+
+textarea {
+    display: block;
+    width: 85%;
+    padding: 50px 0px;
+    margin: 40px;
+    box-sizing: border-box;
+}
+
+#submit {
+    width: 100px;
+    background-color: #2B8895;
+    color: #E4E2D4;
+    border-radius: 10px;
+    transition: background-color 0.5s ease;
+    
+}
+
+#submit:hover {
+    cursor: pointer;
+    background-color: #202723;
+    
+}
+
+/* Media Queries  */
+@media only screen and (max-width: 980px){
+    .name {
+        width:100%;
+        float:none;
+        margin:auto;
+        padding:auto;
+        text-align: center;
+    }
+    .nav-link{
+        display:none;
+    }
+    .hidden-nav{
+        
+            height: 40px;
+            background-color: #E4E2D4;
+            opacity: 0.75;
+            width: 100%;
+            position: relative;
+            top: 62.5px;
+            z-index: 3;
+            display:inline-block;
+            text-align:center;
+    }
+    .hidden-link{
+        display: inline-block;
+        padding: 10px;
+    
+        margin: 0 auto;
+        font-family: 'Poppins', sans-serif;
+        text-decoration: none;
+        font-size: 130%;
+        text-align: center;
+        color: #2B8895;
+        transition: background-color 0.5s ease;
+    }
+    a.hidden-link:hover {
+        background-color: #202723
+    }
+}
+@media only screen and (max-width: 768px) {
+   grid {
+       grid-template-columns: 1fr 1fr;
+       grid-template-rows: repeat(3, 250px);
+   }
+}
+
+
+
+@media only screen and (max-width: 640px) {
+   grid {
+       grid-template-columns: 1fr;
+       grid-template-rows: repeat(6, 250px);
+   }
+   #p1 {
+       width:90%;
+   }
+   #portrait {
+       float: none;
+       margin: 30px 30%;
+       width:40%;
+   }
+
+}
+
+.page {
+    width: 95%;
+}
