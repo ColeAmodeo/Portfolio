@@ -92,6 +92,10 @@ document.onkeyup = function() {
 function guessCheck(){
     if (guesses === 5) {
         document.getElementById("snake5").style.visibility = 'visible';
+        document.getElementById("snake1").style.visibility = 'hidden';
+        document.getElementById("snake2").style.visibility = 'hidden';
+        document.getElementById("snake3").style.visibility = 'hidden';
+        document.getElementById("snake4").style.visibility = 'hidden';      
     }
     if (guesses === 4) {
         document.getElementById("snake4").style.visibility = 'visible';
