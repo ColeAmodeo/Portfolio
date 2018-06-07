@@ -32,6 +32,7 @@ var startGame = function() {
    usedLetters = [];
    randomWord();
    generateBlanks();
+   guessCheck();
    document.getElementById("letters").textContent = usedLetters.join(" ").toUpperCase();
    document.getElementById("guesses").textContent = guesses;
 }
@@ -47,6 +48,7 @@ var checkLetter = function(letter) {
        if (checkedIndex < 0 && usedLetters.indexOf(letter) < 0) {
            usedLetters.push(letter);
            guesses--;
+           guessCheck();
            }
 
        while (checkedIndex >= 0) {
@@ -63,6 +65,7 @@ var checkLetter = function(letter) {
        }
 
        if (guesses === 0) {
+           alert('YOU LOST ALL OUR FRUITS, WHAT HAVE YOU DONE, WE ARE ALL GOING TO DIE');
            losses++;
            word = "";
            wordBank.splice(index, 1);
