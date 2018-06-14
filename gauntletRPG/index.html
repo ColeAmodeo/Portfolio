@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id = "hero-selection">
+        <div id = "hero-box">
+            <div class = "hero-selection">
+                <div class = "hero mage"> </div>
+                <div class = "hero warrior"> </div>
+                <div class = "hero vampire"> </div>
+                <button class ="hero-btn" id = "mage-btn">Mage</button>
+                <button class ="hero-btn" id = "warrior-btn"> Warrior </button>
+                <button class ="hero-btn" id = "vampire-btn"> Vampire </button>
+            </div>
+            <div id = "tooltip">
+                <h1> Hover over each PORTRAIT to Learn More!</h1>
+                <h1> ONLY THE MAGE WORKS RIGHT NOW, DIDNT HAVE ENOUGH TIME TO FINISH OTHER 2</h1>
+                <h2> Clicking a BUTTON will FINALIZE your decision!</h2>
+                <div id = "hero-info"></div>
+            </div>
+        </div>
+    </div>
+     
+    <div id = "game-box">
+        <div id = "grid-container">
+            <div class = "grid grid1"></div>
+            <div class = "grid grid2"></div>
+            <div class = "grid grid3"></div>
+            <div class = "grid grid4"></div>
+            <div class = "grid grid5"></div>
+            <div class = "grid grid6"></div>
+        </div>
+        <div id = "player-card" class = "game-card">
+            <div class = "portrait player-portrait">
+
+            </div>
+            <div class = "stats player-stats">
+                <h1 id = "player-name"> </h1>
+                <h2 id = "hp" > HEALTH </h2>
+                <h3 id = "mana"> MANA </h3>
+            </div>
+
+        </div>
+        
+            <img id = "sword" src = "assets/images/crossed-swords.png">
+        
+        <div id = "enemy-card" class = "game-card">
+            <div class = "portrait enemy-portrait">
+
+            </div>
+            <div class = "stats enemy-stats">
+                <h1 id = "enemy-name">  </h1>
+                <h2 id = "enemy-hp"> </h2>
+            </div>
+        </div>
+        <div class = "action-box">
+                <button class = "action" id = "attack-btn">Attack</button>
+                <button class = "action" id = "special-btn">Special Move</button>
+        </div>
+        <div class = "log-box">
+            <p id = "player-dmg">You dealt</p>
+            <p id = "enemy-dmg">You were dealt </p>
+        </div>
+    
+    
+    </div>
+   
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
