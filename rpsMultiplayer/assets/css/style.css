@@ -1,0 +1,82 @@
+* {
+  text-align: center;
+  background-size: cover;
+  border-radius: 2px;
+}
+
+body {
+  background-image: url('../images/dust_scratches.png');
+}
+
+.container {
+  width: 90%;
+  background-color: #E4E2D4;
+  margin: 0 auto;
+}
+.choice {
+  height: 150px;
+  width: 150px;
+  border-radius: 5%;
+}
+
+button {
+  background-color: blue;
+  opacity: 0.7;
+  color: white;
+  padding: 10px;
+  font-size: 2em;
+  border: none;
+  border-radius: 5%;
+  margin: 5px;
+}
+
+
+button:hover {
+  opacity: 1;
+}
+
+input {
+  padding: 5px;
+  font-size: 2em;
+  width: 100%;
+}
+
+.submit {
+  background-color: blue;
+  margin-top: 10px;
+}
+
+h2 {
+  display:inline-block;
+}
+
+img {
+  margin-bottom: 20px;
+}
+
+.message-input {
+  margin-top: 10px;
+}
+
+.send {
+  margin-top: 20px;
+}
+
+.option {
+  background-color: red;
+}
+
+.dialogue {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  border: 1px solid lightgrey;
+}
+
+p {
+  text-align: left;
+  margin-left: 5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
