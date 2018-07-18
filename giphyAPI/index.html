@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Giphy API App</title>
+    <style>
+
+        * {
+            margin: 10px;
+            border-radius: 3px;
+        }
+        body {
+            background-image: url('stonehaven.png')
+        }
+        .page {
+          width:90%;
+          margin: 0 auto;
+          background-color: #64cbff;
+          opacity: 0.9;
+
+        }
+        button:hover {
+            opacity: 1;
+        }
+
+        .gif-button {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            font-size: 2em;
+            opacity: 0.8;
+        }
+
+        .clear {
+            color: white;
+            padding: 10px;
+            border: none;
+            font-size: 2em;
+            opacity: 0.8;
+            background-color: red;
+        }
+
+        input {
+            font-size: 2em;
+            margin-left: 10px;
+            padding: 6px;
+        }
+
+        .submit {
+            font-size: 2em;
+            background-color: green;
+            color: white;
+            border: none;
+            opacity: 0.8;
+            padding: 8px;
+        }
+
+        .gif-container {
+
+          display: inline-block;
+        }
+
+        h3 {
+          text-align: center;
+        }
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class = 'page'>
+    <input class="input" type="text" placeholder="add a topic">
+    <button class="submit">submit</button>
+    <div class='buttons'>
+        <button class="clear">clear</button>
+    </div>
+    <div class='gifs'></div>
+  </div>
+    <script>
+
+        var topics = ['fish', 'dog', 'fox', 'turtle', 'lasagna', 'bird', 'lizard'];
+// Function used to loop create the buttons
+        function createButtons() {
+
+            for (let i = 0; i < topics.length; i++) {
+                $('.buttons').append($('<button>').addClass('gif-button').text(topics[i]));
+            }
+
+            $(".gif-button").on("click", function() {
+
+                var animal = $(this).text();
+                var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+                animal + "&api_key=ErmCBDJeH1Y9gC5ABMtCzMz9DTxnEWHn&limit=10";
+
+                $.ajax({
+                    url: queryURL,
+                    method: "GET"
+                })
+
+                .then(function(response) {
+                    for (i = 0; i < response.data.length; i++) {
+                        var gifContainer = $('<div>').addClass('gif-container');
+                        var gifURL = response.data[i].images;
+                        var newGIF = $('<img>').attr('src', gifURL.fixed_height_still.url).attr('data-still', gifURL.fixed_height_still.url).attr('data-animate', gifURL.fixed_height.url).attr('data-state', 'still');
+                        gifContainer.append(newGIF).append($('<br>')).append($('<h3>').text('Rating: ' + response.data[i].rating).addClass('rating'));
+                        $('.gifs').append(gifContainer);
+                        newGIF.click(function(){
+
+                            if ($(this).attr('data-state') === 'animate') {
+                                $(this).attr('src', $(this).attr('data-still'));
+                                $(this).attr('data-state', 'still');
+                            } else {
+                                $(this).attr('src', $(this).attr('data-animate'));
+                                $(this).attr('data-state', 'animate');
+                            }
+                        });
+                    }
+                });
+            });
+
+        };
+
+        createButtons();
+
+        $('.clear').click(function() {
+            $('.gif-container').remove();
+        })
+
+        $('.submit').click(function(){
+            topics.push($('.input').val());
+            $('.gif-button').remove();
+            createButtons();
+        })
+
+    </script>
+</body>
+</html>
